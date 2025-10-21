@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #ff9800; color: white; padding: 20px; text-align: center; }
+        .content { background: #f9f9f9; padding: 20px; }
+        .otp-box { background: #fff3e0; padding: 15px; text-align: center; font-size: 24px; font-weight: bold; margin: 20px 0; }
+        .security-info { background: #e8f5e9; padding: 15px; margin: 20px 0; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Login Verification</h1>
+        </div>
+        <div class="content">
+            <p>Hello <strong>{{ username }}</strong>,</p>
+            <p>We received a login attempt to your Secure Health account.</p>
+            
+            <div class="security-info">
+                <p><strong>Login Details:</strong></p>
+                <p>IP Address: {{ ip_address }}</p>
+                <p>Time: {{ login_time }}</p>
+            </div>
+            
+            <p>Please use the following OTP to complete your login:</p>
+            <div class="otp-box">{{ otp }}</div>
+            
+            <p><strong>Security Notice:</strong> If you did not attempt to login, please contact support immediately.</p>
+        </div>
+        <div class="footer">
+            <p>Contact support: {{ support_email }}</p>
+            <p>&copy; 2024 {{ site_name }}. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Secure Health</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            color: #333;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .logo p {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .otp-input {
+            letter-spacing: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin: 8px 0;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .messages {
+            margin-bottom: 20px;
+        }
+
+        .alert {
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .alert.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .form-note {
+            background-color: #fff3cd;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #856404;
+            border-left: 4px solid #ffc107;
+        }
+
+        .login-steps {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #0066cc;
+        }
+
+        .login-steps ol {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .login-steps li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>Secure Health</h1>
+            <p>Login to your account</p>
+        </div>
+
+        <!-- Display Messages -->
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="login-steps">
+            <strong>Login Instructions:</strong>
+            <ol>
+                <li>Enter your username</li>
+                <li>Enter the 6-digit OTP sent to your email</li>
+                <li>Click Login to access your account</li>
+            </ol>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="username">Username *</label>
+                <input type="text" id="username" name="username" 
+                       value="{{ request.POST.username|default:'' }}" 
+                       required placeholder="Enter your username"
+                       autocomplete="username">
+            </div>
+
+            <div class="form-group">
+                <label for="otp">OTP Code *</label>
+                <input type="text" id="otp" name="otp" 
+                       class="otp-input"
+                       required placeholder="Enter 6-digit OTP"
+                       maxlength="6" pattern="[0-9]{6}"
+                       title="Please enter exactly 6 digits">
+                <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                    Enter the 6-digit OTP sent to your registered email
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <div class="links">
+            <a href="{% url 'request_otp' %}">Forgot OTP? Request New OTP</a>
+            <a href="{% url 'register' %}">Don't have an account? Register</a>
+            <a href="{% url 'landing' %}">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Auto-focus on username field
+        document.getElementById('username').focus();
+
+        // OTP input validation
+        document.getElementById('otp').addEventListener('input', function(e) {
+            // Remove non-numeric characters
+            this.value = this.value.replace(/[^0-9]/g, '');
+            
+            // Limit to 6 characters
+            if (this.value.length > 6) {
+                this.value = this.value.slice(0, 6);
+            }
+        });
+
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const username = document.getElementById('username').value.trim();
+            const otp = document.getElementById('otp').value.trim();
+
+            let isValid = true;
+            let errorMessage = '';
+
+            if (!username) {
+                errorMessage = 'Please enter your username';
+                isValid = false;
+            } else if (!otp) {
+                errorMessage = 'Please enter the OTP';
+                isValid = false;
+            } else if (otp.length !== 6) {
+                errorMessage = 'OTP must be exactly 6 digits';
+                isValid = false;
+            } else if (!/^\d+$/.test(otp)) {
+                errorMessage = 'OTP must contain only numbers';
+                isValid = false;
+            }
+
+            if (!isValid) {
+                e.preventDefault();
+                alert(errorMessage);
+            }
+        });
+
+        // Auto-advance to OTP field after username entry
+        document.getElementById('username').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('otp').focus();
+            }
+        });
+
+        // Auto-submit when OTP is complete
+        document.getElementById('otp').addEventListener('input', function(e) {
+            if (this.value.length === 6) {
+                // Optional: auto-submit when OTP is complete
+                // document.querySelector('form').submit();
+            }
+        });
+    </script>
+</body>
+</html>

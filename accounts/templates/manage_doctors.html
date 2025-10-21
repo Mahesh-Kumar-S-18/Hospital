@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Doctors - Admin Dashboard</title>
+    <style>
+        table { border-collapse: collapse; width: 80%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        img { width: 50px; height: 50px; border-radius: 50%; }
+    </style>
+</head>
+<body>
+    <h2>Manage Doctors</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Profile</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+            <tr>
+                <td>
+                    {% if doctor.profile_image %}
+                        <img src="{{ doctor.profile_image.url }}" alt="Profile Image">
+                    {% else %}
+                        <img src="https://via.placeholder.com/50" alt="Profile Image">
+                    {% endif %}
+                </td>
+                <td>{{ doctor.username }}</td>
+                <td>{{ doctor.email }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No doctors found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p><a href="{% url 'dashboard' %}">Back to Dashboard</a></p>
+</body>
+</html>

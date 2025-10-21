@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Health - Verify OTP</title>
+</head>
+<body>
+    <h2>Verify OTP</h2>
+    {% if messages %}
+        <ul>
+            {% for msg in messages %}
+                <li>{{ msg }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <p>Email: <input type="email" name="email" required></p>
+        <p>OTP: <input type="text" name="otp" required></p>
+        <button type="submit">Verify</button>
+    </form>
+</body>
+</html>

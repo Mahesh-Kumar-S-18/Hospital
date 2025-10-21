@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Health - Dashboard</title>
+</head>
+<body>
+    <h2>Dashboard</h2>
+    <p>Welcome, {{ user.username }} ({{ role|title }})</p>
+
+    {% if role == "admin" %}
+        <h3>Admin Panel</h3>
+        <ul>
+            <li><a href="#">Manage Doctors</a></li>
+            <li><a href="#">View Reports</a></li>
+            <li><a href="#">System Settings</a></li>
+        </ul>
+    {% elif role == "doctor" %}
+        <h3>Doctor Panel</h3>
+        <ul>
+            <li><a href="#">View Patients</a></li>
+            <li><a href="#">Add Medical Records</a></li>
+            <li><a href="#">Schedule Appointments</a></li>
+        </ul>
+    {% endif %}
+
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>

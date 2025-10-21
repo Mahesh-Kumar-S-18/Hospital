@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Dashboard - Secure Health</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c7fb8;
+            --primary-dark: #1d5a82;
+            --secondary: #7fcdbb;
+            --accent: #edf8b1;
+            --light: #f7f7f7;
+            --dark: #253237;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar {
+            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+            min-height: 100vh;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.8);
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        .form-section {
+            border-left: 4px solid var(--primary);
+            background-color: #f8f9fa;
+        }
+        
+        .patient-table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-active {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+        }
+        
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border: none;
+            color: white;
+        }
+        
+        .btn-primary-custom:hover {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar p-0">
+                <div class="d-flex flex-column p-3 text-white">
+                    <div class="d-flex align-items-center mb-4 mt-2">
+                        <i class="fas fa-shield-alt fa-2x me-2"></i>
+                        <span class="fs-4 fw-bold">Secure Health</span>
+                    </div>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active py-3">
+                                <i class="fas fa-tachometer-alt me-2"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link py-3">
+                                <i class="fas fa-user-injured me-2"></i>
+                                Patient Records
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link py-3">
+                                <i class="fas fa-file-medical me-2"></i>
+                                Reports
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link py-3">
+                                <i class="fas fa-cogs me-2"></i>
+                                Settings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}" class="nav-link py-3">
+                                <i class="fas fa-sign-out-alt me-2"></i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 ms-sm-auto px-4 py-4">
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h1 class="h2 fw-bold text-primary">Management Dashboard</h1>
+                        <p class="text-muted">Manage patient records and medical data securely</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="me-3 text-end">
+                            <div class="fw-bold">{{ user.username }}</div>
+                            <small class="text-muted">Management Staff</small>
+                        </div>
+                        <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center text-white" style="width: 45px; height: 45px;">
+                            {{ user.username|first|upper }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages -->
+                {% if messages %}
+                <div class="mb-4">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {% if message.tags == 'success' %}
+                            <i class="fas fa-check-circle me-2"></i>
+                        {% elif message.tags == 'error' %}
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                        {% endif %}
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- Stats Cards -->
+                <div class="row mb-5">
+                    <div class="col-md-4 mb-3">
+                        <div class="card card-hover border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                        <i class="fas fa-user-injured fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="mb-0">{{ patients.count }}</h3>
+                                        <p class="text-muted mb-0">Total Patients</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card card-hover border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="rounded-circle bg-success bg-opacity-10 d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                        <i class="fas fa-file-pdf fa-2x text-success"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="mb-0">{{ patients_with_pdf.count }}</h3>
+                                        <p class="text-muted mb-0">PDF Records</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card card-hover border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="rounded-circle bg-warning bg-opacity-10 d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                        <i class="fas fa-shield-alt fa-2x text-warning"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="mb-0">{{ otp_sent_count }}</h3>
+                                        <p class="text-muted mb-0">OTPs Sent</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload New Patient Form -->
+                <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-header bg-white py-3">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-user-plus me-2 text-primary"></i>
+                            Upload New Patient Record
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            
+                            <!-- Personal Information -->
+                            <div class="form-section p-4 mb-4 rounded">
+                                <h4 class="mb-3 text-primary">
+                                    <i class="fas fa-id-card me-2"></i>
+                                    Personal Information
+                                </h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.full_name.id_for_label }}" class="form-label fw-semibold">Full Name</label>
+                                        {{ patient_form.full_name }}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.date_of_birth.id_for_label }}" class="form-label fw-semibold">Date of Birth</label>
+                                        {{ patient_form.date_of_birth }}
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.address.id_for_label }}" class="form-label fw-semibold">Address</label>
+                                        {{ patient_form.address }}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.phone.id_for_label }}" class="form-label fw-semibold">Phone</label>
+                                        {{ patient_form.phone }}
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.email.id_for_label }}" class="form-label fw-semibold">Email</label>
+                                        {{ patient_form.email }}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.national_id.id_for_label }}" class="form-label fw-semibold">National ID</label>
+                                        {{ patient_form.national_id }}
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.gender.id_for_label }}" class="form-label fw-semibold">Gender</label>
+                                        {{ patient_form.gender }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Medical Information -->
+                            <div class="form-section p-4 mb-4 rounded">
+                                <h4 class="mb-3 text-primary">
+                                    <i class="fas fa-stethoscope me-2"></i>
+                                    Medical Information
+                                </h4>
+                                
+                                <div class="mb-3">
+                                    <label for="{{ patient_form.medical_history.id_for_label }}" class="form-label fw-semibold">Medical History</label>
+                                    {{ patient_form.medical_history }}
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="{{ patient_form.diagnosis.id_for_label }}" class="form-label fw-semibold">Diagnosis</label>
+                                    {{ patient_form.diagnosis }}
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.lab_results.id_for_label }}" class="form-label fw-semibold">Lab Results</label>
+                                        {{ patient_form.lab_results }}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.imaging_reports.id_for_label }}" class="form-label fw-semibold">Imaging Reports</label>
+                                        {{ patient_form.imaging_reports }}
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.prescriptions.id_for_label }}" class="form-label fw-semibold">Prescriptions</label>
+                                        {{ patient_form.prescriptions }}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.immunizations.id_for_label }}" class="form-label fw-semibold">Immunizations</label>
+                                        {{ patient_form.immunizations }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Financial Information -->
+                            <div class="form-section p-4 mb-4 rounded">
+                                <h4 class="mb-3 text-primary">
+                                    <i class="fas fa-money-bill-wave me-2"></i>
+                                    Financial Information
+                                </h4>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.insurance_details.id_for_label }}" class="form-label fw-semibold">Insurance Details</label>
+                                        {{ patient_form.insurance_details }}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="{{ patient_form.payment_info.id_for_label }}" class="form-label fw-semibold">Payment Info</label>
+                                        {{ patient_form.payment_info }}
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="{{ patient_form.bank_account.id_for_label }}" class="form-label fw-semibold">Bank Account</label>
+                                    {{ patient_form.bank_account }}
+                                </div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" name="upload_patient" class="btn btn-primary-custom btn-lg py-3">
+                                    <i class="fas fa-save me-2"></i>
+                                    Update Patient Data
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Existing Patients Table -->
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-list me-2 text-primary"></i>
+                            Patient Records
+                        </h3>
+                        <span class="badge bg-primary rounded-pill">{{ patients.count }} records</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0 patient-table">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="px-4">Full Name</th>
+                                        <th class="px-4">DOB</th>
+                                        <th class="px-4">Email</th>
+                                        <th class="px-4">Uploaded At</th>
+                                        <th class="px-4">PDF</th>
+                                        <th class="px-4">Send OTP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for patient in patients %}
+                                    <tr>
+                                        <td class="px-4 fw-semibold">{{ patient.full_name }}</td>
+                                        <td class="px-4">{{ patient.date_of_birth }}</td>
+                                        <td class="px-4">{{ patient.email }}</td>
+                                        <td class="px-4">{{ patient.uploaded_at|date:"M d, Y H:i" }}</td>
+                                        <td class="px-4">
+                                            {% if patient.pdf_file %}
+                                                <a href="{% url 'access_patient_pdf' patient.id %}" target="_blank" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-file-pdf me-1"></i> View PDF
+                                                </a>
+                                            {% else %}
+                                                <span class="badge bg-secondary">N/A</span>
+                                            {% endif %}
+                                        </td>
+                                        <td class="px-4">
+                                            <form method="post" class="d-flex gap-2">
+                                                {% csrf_token %}
+                                                <input type="email" name="email" class="form-control form-control-sm" placeholder="Recipient email" required style="min-width: 180px;">
+                                                <input type="hidden" name="patient_id" value="{{ patient.id }}">
+                                                <button type="submit" name="send_otp" class="btn btn-sm btn-warning">
+                                                    <i class="fas fa-paper-plane me-1"></i> Send OTP
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="6" class="text-center py-5 text-muted">
+                                            <i class="fas fa-inbox fa-3x mb-3"></i>
+                                            <p class="mb-0">No patients found. Add your first patient record above.</p>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Add styling to form elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Style form inputs
+            const inputs = document.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.classList.add('form-control');
+            });
+            
+            // Style selects specifically
+            const selects = document.querySelectorAll('select');
+            selects.forEach(select => {
+                select.classList.add('form-select');
+            });
+            
+            // Style textareas
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach(textarea => {
+                textarea.classList.add('form-control');
+                textarea.style.minHeight = '100px';
+            });
+        });
+    </script>
+</body>
+</html>
