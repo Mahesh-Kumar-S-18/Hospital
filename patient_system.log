@@ -1,0 +1,1332 @@
+Watching for file changes with StatReloader
+"POST /dashboard/ HTTP/1.1" 302 0
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 402, in management_dashboard_view
+    return render(request, 'management_dashboard.html', {
+        'form': form,
+    ...<2 lines>...
+        'user': request.user
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'form': <PatientForm bound=False, valid=False, fields=(full_name;date_of_birth;gender;address;phone;email;national_id;medical_history;diagnosis;lab_results;imaging_reports;prescriptions;immunizations;insurance_details;payment_info;bank_account)>, 'patients': <QuerySet []>, 'send_form': <SendOTPForm bound=False, valid=Unknown, fields=(patient_id;email)>, 'user': <SimpleLazyObject: <CustomUser: takur ()>>}]
+"GET /management-dashboard/ HTTP/1.1" 500 160976
+Watching for file changes with StatReloader
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 402, in management_dashboard_view
+    return render(request, 'management_dashboard.html', {
+        'form': form,
+    ...<2 lines>...
+        'user': request.user
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'form': <PatientForm bound=False, valid=False, fields=(full_name;date_of_birth;gender;address;phone;email;national_id;medical_history;diagnosis;lab_results;imaging_reports;prescriptions;immunizations;insurance_details;payment_info;bank_account)>, 'patients': <QuerySet []>, 'send_form': <SendOTPForm bound=False, valid=Unknown, fields=(patient_id;email)>, 'user': <SimpleLazyObject: <CustomUser: takur ()>>}]
+"GET /management-dashboard/ HTTP/1.1" 500 160976
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 402, in management_dashboard_view
+    return render(request, 'management_dashboard.html', {
+        'form': form,
+    ...<2 lines>...
+        'user': request.user
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'form': <PatientForm bound=False, valid=False, fields=(full_name;date_of_birth;gender;address;phone;email;national_id;medical_history;diagnosis;lab_results;imaging_reports;prescriptions;immunizations;insurance_details;payment_info;bank_account)>, 'patients': <QuerySet []>, 'send_form': <SendOTPForm bound=False, valid=Unknown, fields=(patient_id;email)>, 'user': <SimpleLazyObject: <CustomUser: takur ()>>}]
+"GET /management-dashboard/ HTTP/1.1" 500 160976
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 402, in management_dashboard_view
+    return render(request, 'management_dashboard.html', {
+        'form': form,
+    ...<2 lines>...
+        'user': request.user
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'form': <PatientForm bound=False, valid=False, fields=(full_name;date_of_birth;gender;address;phone;email;national_id;medical_history;diagnosis;lab_results;imaging_reports;prescriptions;immunizations;insurance_details;payment_info;bank_account)>, 'patients': <QuerySet []>, 'send_form': <SendOTPForm bound=False, valid=Unknown, fields=(patient_id;email)>, 'user': <SimpleLazyObject: <CustomUser: takur ()>>}]
+"GET /management-dashboard/ HTTP/1.1" 500 160976
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 402, in management_dashboard_view
+    return render(request, 'management_dashboard.html', {
+        'form': form,
+    ...<2 lines>...
+        'user': request.user
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'form': <PatientForm bound=False, valid=False, fields=(full_name;date_of_birth;gender;address;phone;email;national_id;medical_history;diagnosis;lab_results;imaging_reports;prescriptions;immunizations;insurance_details;payment_info;bank_account)>, 'patients': <QuerySet []>, 'send_form': <SendOTPForm bound=False, valid=Unknown, fields=(patient_id;email)>, 'user': <SimpleLazyObject: <CustomUser: takur ()>>}]
+"GET /management-dashboard/ HTTP/1.1" 500 160976
+D:\Projects\secure health\secure_health\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 409, in management_dashboard_view
+    return render(request, 'management_dashboard.html', {
+        'form': form,
+    ...<2 lines>...
+        'user': request.user
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'form': <PatientForm bound=False, valid=False, fields=(full_name;date_of_birth;gender;address;phone;email;national_id;medical_history;diagnosis;lab_results;imaging_reports;prescriptions;immunizations;insurance_details;payment_info;bank_account)>, 'patients': <QuerySet []>, 'send_form': <SendOTPForm bound=False, valid=Unknown, fields=(email)>, 'user': <SimpleLazyObject: <CustomUser: takur ()>>}]
+"GET /management-dashboard/ HTTP/1.1" 500 160803
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 409, in management_dashboard_view
+    return render(request, 'management_dashboard.html', {
+        'form': form,
+    ...<2 lines>...
+        'user': request.user
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'form': <PatientForm bound=False, valid=False, fields=(full_name;date_of_birth;gender;address;phone;email;national_id;medical_history;diagnosis;lab_results;imaging_reports;prescriptions;immunizations;insurance_details;payment_info;bank_account)>, 'patients': <QuerySet []>, 'send_form': <SendOTPForm bound=False, valid=Unknown, fields=(email)>, 'user': <SimpleLazyObject: <CustomUser: takur ()>>}]
+"GET /management-dashboard/ HTTP/1.1" 500 160803
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 409, in management_dashboard_view
+    return render(request, 'management_dashboard.html', {
+        'form': form,
+    ...<2 lines>...
+        'user': request.user
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'form': <PatientForm bound=False, valid=False, fields=(full_name;date_of_birth;gender;address;phone;email;national_id;medical_history;diagnosis;lab_results;imaging_reports;prescriptions;immunizations;insurance_details;payment_info;bank_account)>, 'patients': <QuerySet []>, 'send_form': <SendOTPForm bound=False, valid=Unknown, fields=(email)>, 'user': <SimpleLazyObject: <CustomUser: takur ()>>}]
+"GET /management-dashboard/ HTTP/1.1" 500 160803
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 409, in management_dashboard_view
+    return render(request, 'management_dashboard.html', {
+        'form': form,
+    ...<2 lines>...
+        'user': request.user
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'form': <PatientForm bound=False, valid=False, fields=(full_name;date_of_birth;gender;address;phone;email;national_id;medical_history;diagnosis;lab_results;imaging_reports;prescriptions;immunizations;insurance_details;payment_info;bank_account)>, 'patients': <QuerySet []>, 'send_form': <SendOTPForm bound=False, valid=Unknown, fields=(email)>, 'user': <SimpleLazyObject: <CustomUser: takur ()>>}]
+"GET /management-dashboard/ HTTP/1.1" 500 160803
+"GET / HTTP/1.1" 200 281
+"GET /login/ HTTP/1.1" 200 619
+"GET /register/ HTTP/1.1" 200 2375
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /register/ HTTP/1.1" 200 1149
+"GET /login/ HTTP/1.1" 200 619
+"POST /login/ HTTP/1.1" 302 0
+Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'patient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 114, in dashboard_view
+    return render(request, "management_dashboard.html", {"role": request.user.role})
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 743, in resolve
+    arg_vals.append(arg.resolve(context))
+                    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 854, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [patient] in [{'True': True, 'False': False, 'None': None}, {}, {}, {'role': 'management'}]
+"GET /dashboard/ HTTP/1.1" 500 150453
+"GET /dashboard/ HTTP/1.1" 200 1681
+"POST /dashboard/ HTTP/1.1" 200 1681
+"POST /dashboard/ HTTP/1.1" 200 1681
+"GET / HTTP/1.1" 200 281
+"GET /login/ HTTP/1.1" 200 619
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 281
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5356
+"GET /login/ HTTP/1.1" 200 619
+"POST /login/ HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 200 4613
+"POST /dashboard/ HTTP/1.1" 200 4530
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /dashboard/ HTTP/1.1" 302 0
+"GET /dashboard/management/ HTTP/1.1" 200 6016
+"POST /dashboard/management/ HTTP/1.1" 302 0
+"GET /dashboard/management/ HTTP/1.1" 200 6886
+Internal Server Error: /patient/1/access/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 306, in access_patient_pdf_view
+    return render(request, 'access_patient_pdf.html', {'patient': patient})
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: access_patient_pdf.html
+"GET /patient/1/access/ HTTP/1.1" 500 86831
+Internal Server Error: /patient/1/access/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 306, in access_patient_pdf_view
+    return render(request, 'access_patient_pdf.html', {'patient': patient})
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: access_patient_pdf.html
+"GET /patient/1/access/ HTTP/1.1" 500 86968
+Internal Server Error: /patient/1/access/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 306, in access_patient_pdf_view
+    return render(request, 'access_patient_pdf.html', {'patient': patient})
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: access_patient_pdf.html
+"GET /patient/1/access/ HTTP/1.1" 500 86968
+Internal Server Error: /patient/1/access/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 306, in access_patient_pdf_view
+    return render(request, 'access_patient_pdf.html', {'patient': patient})
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: access_patient_pdf.html
+"GET /patient/1/access/ HTTP/1.1" 500 86968
+Internal Server Error: /patient/1/access/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 306, in access_patient_pdf_view
+    return render(request, 'access_patient_pdf.html', {'patient': patient})
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: access_patient_pdf.html
+"GET /patient/1/access/ HTTP/1.1" 500 86968
+Internal Server Error: /patient/1/access/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 306, in access_patient_pdf_view
+    return render(request, 'access_patient_pdf.html', {'patient': patient})
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: access_patient_pdf.html
+"GET /patient/1/access/ HTTP/1.1" 500 86968
+Internal Server Error: /patient/1/access/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 306, in access_patient_pdf_view
+    return render(request, 'access_patient_pdf.html', {'patient': patient})
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: access_patient_pdf.html
+"GET /patient/1/access/ HTTP/1.1" 500 86831
+D:\Projects\secure health\secure_health\secure_health\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\secure_health\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /patient/1/access/ HTTP/1.1" 200 3397
+"POST /patient/1/access/ HTTP/1.1" 302 0
+"GET /media/patient_pdfs/hanu.pdf HTTP/1.1" 200 1709
+"GET /patient/1/access/ HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/patient/1/access/ HTTP/1.1" 404 5388
+Watching for file changes with StatReloader
+Not Found: /dashboard/management/
+"GET /dashboard/management/ HTTP/1.1" 404 5382
+Not Found: /dashboard/management/
+"GET /dashboard/management/ HTTP/1.1" 404 5382
+Not Found: /dashboard/management/
+"GET /dashboard/management/ HTTP/1.1" 404 5382
+"GET / HTTP/1.1" 200 281
+"GET /login/ HTTP/1.1" 200 619
+"POST /login/ HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 302 0
+"GET /management/dashboard/ HTTP/1.1" 200 6843
+"GET /patient/1/access/ HTTP/1.1" 200 3397
+"GET /management/dashboard/ HTTP/1.1" 200 6760
+"GET /management/dashboard/ HTTP/1.1" 200 6765
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /management/dashboard/ HTTP/1.1" 200 6765
+"GET / HTTP/1.1" 200 281
+"GET /register/ HTTP/1.1" 200 6996
+"POST /register/ HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 8378
+"POST /login/ HTTP/1.1" 302 0
+"GET /doctor/dashboard/ HTTP/1.1" 200 1421
+"POST /doctor/dashboard/ HTTP/1.1" 302 0
+"GET /doctor/dashboard/ HTTP/1.1" 200 2107
+"POST /doctor/dashboard/ HTTP/1.1" 302 0
+"GET /doctor/dashboard/ HTTP/1.1" 200 2107
+"GET /file/4/access/ HTTP/1.1" 200 3460
+"GET /doctor/dashboard/ HTTP/1.1" 200 2107
+"GET /file/4/access/ HTTP/1.1" 200 3140
+"GET /file/4/access/ HTTP/1.1" 200 3140
+"GET /doctor/dashboard/ HTTP/1.1" 200 2107
+"GET /doctor/dashboard/ HTTP/1.1" 200 20821
+"GET /doctor/dashboard/ HTTP/1.1" 200 7622
+"GET /file/4/access/ HTTP/1.1" 200 3140
+"GET /doctor/dashboard/ HTTP/1.1" 302 0
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/doctor/dashboard/ HTTP/1.1" 404 5388
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 281
+"GET /login/ HTTP/1.1" 200 8192
+"POST /login/ HTTP/1.1" 302 0
+"GET /management/dashboard/ HTTP/1.1" 200 6854
+Forbidden (CSRF token from POST incorrect.): /login/
+"POST /login/ HTTP/1.1" 403 2503
+"GET /login/ HTTP/1.1" 200 8192
+"GET /login/ HTTP/1.1" 200 8192
+"GET /login/ HTTP/1.1" 200 8192
+"GET /login/ HTTP/1.1" 200 8192
+"POST /login/ HTTP/1.1" 200 8362
+"GET /request-otp/ HTTP/1.1" 200 460
+"POST /login/ HTTP/1.1" 302 0
+"GET /management/dashboard/ HTTP/1.1" 200 6112
+"GET /login/ HTTP/1.1" 200 8192
+"POST /login/ HTTP/1.1" 200 8361
+"GET / HTTP/1.1" 200 281
+"GET /register/ HTTP/1.1" 200 6996
+"POST /register/ HTTP/1.1" 200 7395
+"POST /register/ HTTP/1.1" 200 7228
+"GET /login/ HTTP/1.1" 200 8192
+"POST /login/ HTTP/1.1" 200 8362
+"GET / HTTP/1.1" 200 281
+"GET /login/ HTTP/1.1" 200 8192
+D:\Projects\secure health\secure_health\secure_health\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\secure_health\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 281
+"GET /register/ HTTP/1.1" 200 6996
+"POST /register/ HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 8378
+"POST /login/ HTTP/1.1" 302 0
+"GET /doctor/dashboard/ HTTP/1.1" 200 6805
+"POST /doctor/dashboard/ HTTP/1.1" 302 0
+"GET /doctor/dashboard/ HTTP/1.1" 200 7944
+"GET /file/1/access/ HTTP/1.1" 200 3361
+"GET /doctor/dashboard/ HTTP/1.1" 200 7944
+"POST /doctor/dashboard/ HTTP/1.1" 302 0
+"GET /doctor/dashboard/ HTTP/1.1" 200 7944
+"GET /file/1/access/ HTTP/1.1" 200 3307
+"POST /file/1/access/ HTTP/1.1" 302 0
+"GET /media/patient_files/MajorProjectSynopsis_7.pdf HTTP/1.1" 200 172453
+"GET /file/1/access/ HTTP/1.1" 200 3141
+"GET /doctor/dashboard/ HTTP/1.1" 200 7944
+"GET /file/1/access/ HTTP/1.1" 200 3141
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 281
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5352
+"GET /management/dashboard/ HTTP/1.1" 302 0
+"GET /login/?next=/management/dashboard/ HTTP/1.1" 200 8192
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5352
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 5352
+"GET /login/ HTTP/1.1" 200 8192
+"GET / HTTP/1.1" 200 281
+"GET / HTTP/1.1" 200 22822
+"GET /register/ HTTP/1.1" 200 6996
+"GET /register/?role=admin HTTP/1.1" 200 6996
+"GET /register/?role=management HTTP/1.1" 200 6996
+"GET /register/?role=doctor HTTP/1.1" 200 6996
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 22822
+"GET /register/?role=admin HTTP/1.1" 200 6996
+"POST /register/?role=admin HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 8378
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 150, in login_view
+    return redirect("admin_dashboard")
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 51, in redirect
+    resolve_url(to, *args, **kwargs),
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_dashboard' not found. 'admin_dashboard' is not a valid view function or pattern name.
+"POST /login/ HTTP/1.1" 500 89857
+D:\Projects\secure health\secure_health\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden (CSRF token from POST incorrect.): /login/
+"POST /login/ HTTP/1.1" 403 2503
+"GET /login/ HTTP/1.1" 200 8339
+"POST /login/ HTTP/1.1" 302 0
+"GET /admin-dashboard/ HTTP/1.1" 200 21364
+"GET /admin-dashboard/ HTTP/1.1" 200 21364
+"GET /admin-dashboard/ HTTP/1.1" 200 21351
+"GET /admin-dashboard/ HTTP/1.1" 200 21337
+"GET /admin-dashboard/ HTTP/1.1" 200 21364
+"GET /admin-dashboard/ HTTP/1.1" 200 20472
+"GET /admin-dashboard/ HTTP/1.1" 200 20334
+"GET /admin-dashboard/ HTTP/1.1" 200 20343
+"GET /admin-dashboard/ HTTP/1.1" 200 20352
+"GET / HTTP/1.1" 200 22822
+"GET /register/ HTTP/1.1" 200 7143
+"GET /register/ HTTP/1.1" 200 6996
+"GET /login/ HTTP/1.1" 200 8192
+"POST /login/ HTTP/1.1" 302 0
+Internal Server Error: /doctor-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 276, in doctor_dashboard_view
+    return render(request, 'doctor_dashboard.html', {
+        'form': form,
+        'files': files,
+        'send_form': send_form
+    })
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'access_patient_file' not found. 'access_patient_file' is not a valid view function or pattern name.
+"GET /doctor-dashboard/ HTTP/1.1" 500 143300
+D:\Projects\secure health\secure_health\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /doctor-dashboard/ HTTP/1.1" 200 7944
+"POST /doctor-dashboard/ HTTP/1.1" 302 0
+"GET /doctor-dashboard/ HTTP/1.1" 200 9369
+"GET /admin-dashboard/ HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 302 0
+"GET /doctor-dashboard/ HTTP/1.1" 200 9369
+"GET /access-file/1/ HTTP/1.1" 200 3429
+"GET /doctor-dashboard/ HTTP/1.1" 200 9369
+"GET /doctor-dashboard/ HTTP/1.1" 200 9369
+"GET /access-file/1/ HTTP/1.1" 200 3141
+"GET /access-file/1/ HTTP/1.1" 200 3141
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 22822
+"GET /register/ HTTP/1.1" 200 7161
+"GET / HTTP/1.1" 200 22822
+"GET /register/ HTTP/1.1" 200 6996
+"GET /login/ HTTP/1.1" 200 8192
+"POST /login/ HTTP/1.1" 302 0
+"GET /doctor-dashboard/ HTTP/1.1" 200 9369
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 22822
+"GET /register/ HTTP/1.1" 200 7245
+"POST /register/ HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 8378
+"POST /login/ HTTP/1.1" 302 0
+"GET /management-dashboard/ HTTP/1.1" 200 6109
+"GET /management-dashboard/ HTTP/1.1" 200 20460
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 22822
+"GET /management-dashboard/ HTTP/1.1" 302 0
+"GET /login/?next=/management-dashboard/ HTTP/1.1" 200 8357
+"GET /request-otp/ HTTP/1.1" 200 460
+"GET /login/?next=/management-dashboard/ HTTP/1.1" 200 8192
+"POST /login/?next=/management-dashboard/ HTTP/1.1" 302 0
+"GET /management-dashboard/ HTTP/1.1" 200 20979
+"GET /management-dashboard/ HTTP/1.1" 200 20460
+"POST /management-dashboard/ HTTP/1.1" 302 0
+"GET /management-dashboard/ HTTP/1.1" 200 22456
+"GET /management-dashboard/ HTTP/1.1" 200 21887
+"GET /access-patient-pdf/1/ HTTP/1.1" 200 3397
+"POST /management-dashboard/ HTTP/1.1" 302 0
+"GET /management-dashboard/ HTTP/1.1" 200 22436
+"GET /access-patient-pdf/1/ HTTP/1.1" 200 3397
+"POST /access-patient-pdf/1/ HTTP/1.1" 302 0
+"GET /media/patient_pdfs/Rangappa.pdf HTTP/1.1" 200 1774
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /management-dashboard/ HTTP/1.1" 200 21889
+"GET /access-patient-pdf/1/ HTTP/1.1" 200 3397
+"GET /doctor-dashboard/ HTTP/1.1" 302 0
+"GET /dashboard/ HTTP/1.1" 302 0
+"GET /management-dashboard/ HTTP/1.1" 200 22414
+Internal Server Error: /management-dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HANUMANTHU\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Projects\secure health\secure_health\accounts\views.py", line 717, in management_dashboard_view
+    <p><strong>Access Provided:</strong> {timezone.now().strftime('%B %d, %Y at %H:%M')}</p>
+                                          ^^^^^^^^
+NameError: name 'timezone' is not defined
+"POST /management-dashboard/ HTTP/1.1" 500 77332
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /management-dashboard/ HTTP/1.1" 302 0
+"GET /management-dashboard/ HTTP/1.1" 200 22442
+"GET /access-patient-pdf/1/ HTTP/1.1" 200 3397
+"POST /access-patient-pdf/1/ HTTP/1.1" 302 0
+"GET /media/patient_pdfs/Rangappa.pdf HTTP/1.1" 304 0
+"GET /management-dashboard/ HTTP/1.1" 200 21889
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 22822
+"GET /register/ HTTP/1.1" 200 7161
+"GET /register/ HTTP/1.1" 200 6996
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /register/ HTTP/1.1" 200 6996
+"GET /register/ HTTP/1.1" 200 6996
+"GET / HTTP/1.1" 200 22822
+"GET /register/ HTTP/1.1" 200 6996
+"GET /management-dashboard/ HTTP/1.1" 302 0
+"GET /login/?next=/management-dashboard/ HTTP/1.1" 200 8192
+"GET /register/ HTTP/1.1" 200 6996
+"POST /register/ HTTP/1.1" 200 7229
+"POST /register/ HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 8383
+"POST /login/ HTTP/1.1" 302 0
+"GET /management-dashboard/ HTTP/1.1" 200 20981
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 22822
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Projects\secure health\secure_health\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 22793
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 22793
+"GET / HTTP/1.1" 200 22793
+"GET / HTTP/1.1" 200 22793
+"GET /register/?role=admin HTTP/1.1" 200 7161
+"GET /register/?role=admin HTTP/1.1" 200 6996
+"POST /register/?role=admin HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 8383
+"POST /login/ HTTP/1.1" 302 0
+"GET /admin-dashboard/ HTTP/1.1" 200 19444
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 22793
+"GET /register/ HTTP/1.1" 200 7240
+"GET / HTTP/1.1" 200 22793
+"GET /register/?role=doctor HTTP/1.1" 200 6996
+"POST /register/?role=doctor HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 8383
+"POST /login/ HTTP/1.1" 302 0
+"GET /doctor-dashboard/ HTTP/1.1" 200 6801
+"POST /doctor-dashboard/ HTTP/1.1" 302 0
+"GET /doctor-dashboard/ HTTP/1.1" 200 7947
+"POST /doctor-dashboard/ HTTP/1.1" 302 0
+"GET /doctor-dashboard/ HTTP/1.1" 200 7947
+"GET /access-file/1/ HTTP/1.1" 200 3457
+"GET /access-file/1/ HTTP/1.1" 200 3141
+"POST /access-file/1/ HTTP/1.1" 302 0
+"GET /media/patient_files/MajorProjectSynopsis_7_gPhEND4.pdf HTTP/1.1" 200 172453
+"GET /access-file/1/ HTTP/1.1" 200 3141
+"GET /doctor-dashboard/ HTTP/1.1" 200 7947
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 22793
+"GET /register/?role=management HTTP/1.1" 200 7161
+"GET /register/?role=management HTTP/1.1" 200 6996
+"POST /register/?role=management HTTP/1.1" 302 0
+"GET /login/ HTTP/1.1" 200 8383
+"POST /login/ HTTP/1.1" 302 0
+"GET /management-dashboard/ HTTP/1.1" 200 20983
+"GET /management-dashboard/ HTTP/1.1" 200 20463
+"POST /management-dashboard/ HTTP/1.1" 302 0
+"GET /management-dashboard/ HTTP/1.1" 200 22459
+"GET /access-patient-pdf/1/ HTTP/1.1" 200 3394
+"POST /access-patient-pdf/1/ HTTP/1.1" 302 0
+"GET /media/patient_pdfs/Raju_medical_record.pdf HTTP/1.1" 200 2621
+"GET /management-dashboard/ HTTP/1.1" 200 21886
+"GET /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 22793
+"GET /register/ HTTP/1.1" 200 7161
+"GET /register/ HTTP/1.1" 200 6996
+"GET / HTTP/1.1" 200 22793
