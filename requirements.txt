@@ -1,6 +1,5 @@
-Django>=3.2,<4.3
-gunicorn>=20.1.0
-whitenoise>=6.2.0
-dj-database-url>=1.0.0
-psycopg2-binary>=2.9.3
-pip install gunicorn whitenoise dj-database-url psycopg2-binary
+Django==4.2.25
+gunicorn==23.0.0
+whitenoise==6.11.0
+dj-database-url==3.0.1
+psycopg2-binary==2.9.11
